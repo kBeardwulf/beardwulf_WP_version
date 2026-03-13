@@ -6,264 +6,205 @@
 get_header();
 ?>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero" id="accueil">
-    <div class="container hero-content">
-      <h1 class="hero-title">Construisons ensemble<br>votre avenir</h1>
-      <p class="hero-subtitle">Expert en bâtiment et construction depuis plus de 20 ans.<br>Qualité, fiabilité et savoir-faire au service de vos projets.</p>
-      <div class="hero-buttons">
-        <a href="<?php the_permalink(12); ?>" class="btn btn-accent">Demander un devis</a>
-        <a href="<?php the_permalink(16); ?>" class="btn btn-outline-white">Nos réalisations</a>
-      </div>
+  <!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow"><span class="hero-dot"></span>Disponible pour de nouveaux projets</span>
+    <h1 class="hero-title">
+      <span class="t-lime">Créer,</span><br>
+      <span class="t-outline">Concevoir,</span><br>
+      Donner vie<br>
+      <span class="t-lime">à vos idées.</span>
+    </h1>
+    <p class="hero-sub">Développeur web, graphiste &amp; créateur d'événements — je combine technique et créativité pour donner une identité forte à vos projets, du pixel au présentiel.</p>
+    <div class="hero-actions">
+      <a href="#projets" class="btn-lime">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#contact" class="btn-ghost">Me contacter <i class="fa-regular fa-envelope"></i></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== ABOUT 50/50 ========== -->
-  <section class="about" id="about">
-    <div class="container split-grid">
-      <div class="split-text fade-in">
-        <span class="section-tag">Qui sommes-nous</span>
-        <h2>Une expertise reconnue<br>dans le bâtiment</h2>
-        <p>Depuis plus de 20 ans, DWWM accompagne particuliers et professionnels dans la réalisation de leurs projets de construction et de rénovation. Notre équipe de passionnés met son savoir-faire au service de votre vision.</p>
-        <p>Nous nous engageons à respecter les délais, les budgets et les normes les plus exigeantes. Chaque projet est unique et mérite une attention particulière, c'est pourquoi nous vous offrons un accompagnement personnalisé de A à Z.</p>
-        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
-      </div>
-      <div class="split-image fade-in">
-        <img src="images/accueil-1.jpg" alt="Équipe DWWM sur un chantier de construction">
-      </div>
-    </div>
-  </section>
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-n">7+</span><span class="stat-l">ans dans l'événementiel</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-n">1000+</span><span class="stat-l">participants à mes events</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-n">3</span><span class="stat-l">domaines d'expertise</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-n">France</span><span class="stat-l">entière</span></div>
+  </div>
+</div>
 
-  <!-- ========== SERVICES ========== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Ce que nous proposons</span>
-        <h2>Nos Services</h2>
-        <p>Des solutions complètes pour tous vos projets de construction et de rénovation.</p>
+<!-- COMPÉTENCES -->
+<section id="competences">
+  <div class="si">
+    <span class="eyebrow reveal">Savoir-faire</span>
+    <h2 class="stitle reveal">Mes domaines<br>d'expertise</h2>
+    <p class="sdesc reveal">Trois univers complémentaires pour aborder vos projets avec une vision 360°, de la conception à la réalisation.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-ic"><i class="fa-solid fa-code"></i></div>
+        <h3>Développement Web</h3>
+        <p>De la maquette au déploiement, je construis des interfaces modernes, performantes et accessibles — avec une vraie sensibilité design.</p>
+        <div class="pills"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span class="pill">PHP</span><span class="pill">SQL</span><span class="pill">Bootstrap</span><span class="pill">Tailwind</span><span class="pill">WordPress</span></div>
       </div>
-      <div class="services-grid">
-        <div class="service-box fade-in">
-          <div class="service-icon"><i class="fas fa-building"></i></div>
-          <h3>Construction neuve</h3>
-          <p>Conception et construction de bâtiments résidentiels et commerciaux, de la fondation à la livraison clé en main.</p>
-        </div>
-        <div class="service-box fade-in">
-          <div class="service-icon"><i class="fas fa-hammer"></i></div>
-          <h3>Rénovation</h3>
-          <p>Rénovation complète ou partielle de vos espaces. Modernisez votre habitat tout en préservant son caractère.</p>
-        </div>
-        <div class="service-box fade-in">
-          <div class="service-icon"><i class="fas fa-expand-arrows-alt"></i></div>
-          <h3>Extension &amp; Surélévation</h3>
-          <p>Agrandissez votre espace de vie avec des extensions sur mesure, parfaitement intégrées à l'existant.</p>
-        </div>
-        <div class="service-box fade-in">
-          <div class="service-icon"><i class="fas fa-couch"></i></div>
-          <h3>Aménagement intérieur</h3>
-          <p>Optimisez et transformez vos espaces intérieurs avec des aménagements fonctionnels et esthétiques.</p>
-        </div>
-        <div class="service-box fade-in">
-          <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
-          <h3>Gros œuvre</h3>
-          <p>Fondations, murs porteurs, dalles et charpentes. La structure solide de votre bâtiment, notre spécialité.</p>
-        </div>
-        <div class="service-box fade-in">
-          <div class="service-icon"><i class="fas fa-plug"></i></div>
-          <h3>Second œuvre</h3>
-          <p>Électricité, plomberie, isolation, plâtrerie et finitions pour un résultat impeccable dans les moindres détails.</p>
-        </div>
+      <div class="skill-card reveal d1">
+        <div class="skill-ic"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Graphisme &amp; Design</h3>
+        <p>Identités visuelles, maquettes, illustrations — je maîtrise les outils professionnels de la création graphique et UX.</p>
+        <div class="pills"><span class="pill">Figma</span><span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">InDesign</span><span class="pill">Affinity</span><span class="pill">Clip Studio</span></div>
+      </div>
+      <div class="skill-card reveal d2">
+        <div class="skill-ic"><i class="fa-solid fa-calendar-star"></i></div>
+        <h3>Événementiel</h3>
+        <p>7 ans à organiser des événements à travers la France — de petits stands à des conventions de 1000+ personnes avec une grande autonomie.</p>
+        <div class="pills"><span class="pill">Notion</span><span class="pill">Discord</span><span class="pill">Gestion de projet</span><span class="pill">Autonomie</span><span class="pill">Adaptabilité</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== GALLERY ========== -->
-  <section class="gallery" id="realisations">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Portfolio</span>
-        <h2>Nos Réalisations</h2>
-        <p>Découvrez quelques-uns de nos projets récents, témoignages de notre savoir-faire.</p>
+<!-- MÉTHODE -->
+<section id="methode">
+  <div class="si">
+    <span class="eyebrow reveal">Process</span>
+    <h2 class="stitle reveal">Comment je travaille</h2>
+    <p class="sdesc reveal">4 étapes claires pour des projets livrés dans les délais et conformes à vos attentes — sans mauvaise surprise.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-emoji">💬</div>
+        <h3>Prise de contact</h3>
+        <p>On discute de vos besoins, objectifs et contraintes. L'étape clé pour poser des bases solides avant de démarrer.</p>
+        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item fade-in" data-index="0">
-          <img src="images/accueil-real-1.jpg" alt="" loading="lazy">
-          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-        </div>
-        <div class="gallery-item fade-in" data-index="1">
-          <img src="images/accueil-real-2.jpg" alt="" loading="lazy">
-          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-        </div>
-        <div class="gallery-item fade-in" data-index="2">
-          <img src="images/accueil-real-3.jpg" alt="" loading="lazy">
-          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-        </div>
-        <div class="gallery-item fade-in" data-index="3">
-          <img src="images/accueil-real-4.jpg" alt="" loading="lazy">
-          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-        </div>
-        <div class="gallery-item fade-in" data-index="4">
-          <img src="images/accueil-real-5.jpg" alt="" loading="lazy">
-          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-        </div>
-        <div class="gallery-item fade-in" data-index="5">
-          <img src="images/accueil-real-6.jpg" alt="" loading="lazy">
-          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-        </div>
+      <div class="step reveal d1">
+        <div class="step-num">02</div>
+        <div class="step-emoji">✏️</div>
+        <h3>Ébauches</h3>
+        <p>Maquettes et premières propositions. On affine ensemble la direction créative avant la production.</p>
+        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">03</div>
+        <div class="step-emoji">📦</div>
+        <h3>Remise du projet</h3>
+        <p>Livraison du projet finalisé avec tous les fichiers sources et documentations nécessaires à la prise en main.</p>
+        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-num">04</div>
+        <div class="step-emoji">✅</div>
+        <h3>Validation</h3>
+        <p>Ajustements et retouches finales selon vos retours. Validé lorsque vous êtes pleinement satisfait.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== PARTNERS ========== -->
-  <section class="partners">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Ils nous font confiance</span>
-        <h2>Nos Partenaires</h2>
+<!-- PROJETS -->
+<section id="projets">
+  <div class="si">
+    <span class="eyebrow reveal">Réalisations</span>
+    <h2 class="stitle reveal">Quelques projets</h2>
+    <p class="sdesc reveal">Développement web, identités visuelles, événements — un aperçu de ce que je peux créer pour vous.</p>
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-thumb">WEB</div>
+        <div class="proj-body">
+          <div class="proj-type">Développement Web</div>
+          <h3>Nom du projet</h3>
+          <p>Description du projet, ses enjeux, la solution mise en place. À remplacer par une vraie réalisation.</p>
+          <div class="proj-tags"><span class="proj-tag">WordPress</span><span class="proj-tag">PHP</span><span class="proj-tag">Tailwind</span></div>
+        </div>
       </div>
-      <div class="swiper partners-swiper fade-in">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/accueil-logo1.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="images/accueil-logo2.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="images/accueil-logo3.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="images/accueil-logo4.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="images/accueil-logo5.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="images/accueil-logo6.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="images/accueil-logo7.jpg" alt=""></div>
+      <div class="proj-card reveal d1">
+        <div class="proj-thumb">DESIGN</div>
+        <div class="proj-body">
+          <div class="proj-type">Identité visuelle</div>
+          <h3>Nom du projet</h3>
+          <p>Branding, charte graphique, supports print ou digitaux. À remplacer par une vraie réalisation.</p>
+          <div class="proj-tags"><span class="proj-tag">Illustrator</span><span class="proj-tag">Figma</span></div>
+        </div>
+      </div>
+      <div class="proj-card reveal d2">
+        <div class="proj-thumb">EVENT</div>
+        <div class="proj-body">
+          <div class="proj-type">Événementiel</div>
+          <h3>Nom de l'événement</h3>
+          <p>Convention, festival, salon. Nombre de participants, outils, contexte. À remplacer par une vraie réalisation.</p>
+          <div class="proj-tags"><span class="proj-tag">Notion</span><span class="proj-tag">Discord</span><span class="proj-tag">1000+ pers.</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials" id="temoignages">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Avis clients</span>
-        <h2>Ce que disent nos clients</h2>
-        <p>La satisfaction de nos clients est notre plus belle récompense.</p>
+<!-- À PROPOS -->
+<section id="apropos">
+  <div class="si">
+    <div class="apropos-g">
+      <div class="reveal">
+        <div class="apropos-img">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/HeroBannerIndex.jpg" alt="Kevin Burdloff — Beardwulf Events" />
+          <span class="apropos-img-label">Kevin Burdloff — Beardwulf</span>
+        </div>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"DWWM a réalisé la construction de notre maison dans les délais et le budget prévus. Le suivi de chantier était irréprochable. Nous recommandons vivement cette entreprise."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">ML</div>
-            <div>
-              <strong>Marie Lefèvre</strong>
-              <span>Construction maison individuelle</span>
-            </div>
-          </div>
+      <div>
+        <span class="eyebrow reveal">À propos</span>
+        <h2 class="stitle reveal">Polyvalent<br>par passion.</h2>
+        <p class="sdesc reveal" style="max-width:100%">Passionné par la création sous toutes ses formes, j'ai développé une expertise rare à la croisée du développement web, du graphisme et de l'événementiel. Cette triple compétence me permet d'aborder vos projets dans leur globalité.</p>
+        <p class="sdesc reveal" style="max-width:100%;margin-top:1rem">Avec 7 ans d'expérience événementielle — des petits stands en conventions jusqu'aux événements de plus de 1000 personnes à travers toute la France — j'ai appris à piloter des projets complexes avec rigueur et sang-froid.</p>
+        <div class="values reveal">
+          <div class="value"><div class="value-ic"><i class="fa-solid fa-bolt fa-xs"></i></div><span>Grande autonomie et réactivité</span></div>
+          <div class="value"><div class="value-ic"><i class="fa-solid fa-shuffle fa-xs"></i></div><span>Adaptabilité dans tous les environnements</span></div>
+          <div class="value"><div class="value-ic"><i class="fa-solid fa-handshake fa-xs"></i></div><span>Communication transparente à chaque étape</span></div>
+          <div class="value"><div class="value-ic"><i class="fa-solid fa-award fa-xs"></i></div><span>Exigence constante sur la qualité rendue</span></div>
         </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Une équipe professionnelle et à l'écoute. La rénovation de nos bureaux a été menée avec expertise. Le résultat dépasse nos attentes. Merci à toute l'équipe !"</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">PD</div>
-            <div>
-              <strong>Pierre Durand</strong>
-              <span>Rénovation bureaux professionnels</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-          <p class="testimonial-text">"Excellent travail sur notre extension. L'équipe a su proposer des solutions techniques adaptées et le chantier a été propre et bien organisé du début à la fin."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SB</div>
-            <div>
-              <strong>Sophie Bernard</strong>
-              <span>Extension &amp; surélévation</span>
-            </div>
-          </div>
-        </div>
+        <a href="#contact" class="btn-lime reveal">Travaillons ensemble <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== CONTACT 50/50 ========== -->
-  <section class="contact" id="contact">
-    <div class="container split-grid">
-      <div class="contact-info fade-in">
-        <span class="section-tag">Parlons de votre projet</span>
-        <h2>Contactez-nous</h2>
-        <p>N'hésitez pas à nous contacter pour discuter de votre projet. Nous vous répondrons dans les plus brefs délais.</p>
-        <ul class="contact-details">
-          <li>
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <strong>Adresse</strong>
-              <span>12 Rue de la Construction<br>75001 Paris, France</span>
-            </div>
-          </li>
-          <li>
-            <i class="fas fa-phone-alt"></i>
-            <div>
-              <strong>Téléphone</strong>
-              <span>01 23 45 67 89</span>
-            </div>
-          </li>
-          <li>
-            <i class="fas fa-envelope"></i>
-            <div>
-              <strong>Email</strong>
-              <span>contact@dwwm-batiment.fr</span>
-            </div>
-          </li>
-          <li>
-            <i class="fas fa-clock"></i>
-            <div>
-              <strong>Horaires</strong>
-              <span>Lun - Ven : 8h00 - 18h00<br>Sam : 9h00 - 12h00</span>
-            </div>
-          </li>
-        </ul>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="si">
+    <div class="contact-g">
+      <div>
+        <span class="eyebrow reveal">Contact</span>
+        <h2 class="stitle reveal">Parlons de<br>votre projet.</h2>
+        <p class="sdesc reveal">Une idée, une question, un projet ? N'hésitez pas — je réponds généralement sous 24h.</p>
+        <div class="contact-info reveal">
+          <div class="ci">
+            <div class="ci-ic"><i class="fa-regular fa-envelope"></i></div>
+            <div><div class="ci-label">Email</div><a href="mailto:burdloffkevin@gmail.com">burdloffkevin@gmail.com</a></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ic"><i class="fa-brands fa-linkedin"></i></div>
+            <div><div class="ci-label">LinkedIn</div><a href="#">Votre profil LinkedIn</a></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ic"><i class="fa-solid fa-location-dot"></i></div>
+            <div><div class="ci-label">Disponibilité</div><span>France — télétravail &amp; présentiel</span></div>
+          </div>
+        </div>
       </div>
-      <div class="contact-form-wrap fade-in">
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Nom complet *</label>
-              <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Téléphone</label>
-              <input type="tel" id="phone" name="phone" placeholder="01 23 45 67 89">
-            </div>
-            <div class="form-group">
-              <label for="subject">Sujet *</label>
-              <select id="subject" name="subject" required>
-                <option value="" disabled selected>Choisir un sujet</option>
-                <option value="devis">Demande de devis</option>
-                <option value="info">Demande d'information</option>
-                <option value="rdv">Prise de rendez-vous</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <i class="fas fa-paper-plane"></i> Envoyer le message
-          </button>
-        </form>
+      <div class="cform reveal d1">
+        <h3>Envoyer un message</h3>
+        <div class="fg"><label>Votre nom</label><input type="text" placeholder="Jean Dupont" /></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="jean@exemple.fr" /></div>
+        <div class="fg"><label>Type de projet</label><select><option>Développement web</option><option>Design graphique</option><option>Événementiel</option><option>Plusieurs domaines</option><option>Autre</option></select></div>
+        <div class="fg"><label>Message</label><textarea placeholder="Décrivez votre projet en quelques lignes..."></textarea></div>
+        <button class="btn-submit">Envoyer <i class="fa-solid fa-paper-plane"></i></button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <?php
 get_footer();
 ?>

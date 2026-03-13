@@ -1,90 +1,65 @@
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <!-- Col 1: Logo + texte -->
-      <div class="footer-col">
-        <a href="index.html" class="footer-logo">
-          <img src="<?php echo get_template_directory_uri();?>/images/logo/logo.svg" alt="DWWM">
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="<?php echo home_url(); ?>" class="logo">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logolouptexte.png" alt="Beardwulf Events">
         </a>
-        <p>Votre partenaire de confiance pour tous vos projets de construction et de rénovation. Qualité, fiabilité et savoir-faire depuis plus de 20 ans.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <p>Développeur web, graphiste et créateur d'événements basé en France. Disponible pour des missions freelance et collaborations.</p>
+        <div class="ft-social">
+          <a href="#" class="soc" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="soc" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="soc" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="soc" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="soc" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
-      
-      <!-- Col 2: Menu secondaire -->
-      <div class="footer-col">
+
+      <div class="ft-col">
         <h4>Navigation</h4>
-          <?php
-            wp_nav_menu(array(
-              "menu" => "Footer",
-              "theme_location" => "Footer",
-              "depth" => 2,
-              "container" => "",
-              "container_id" => "",
-              "container_class" => "",
-              "menu_class" => "",
-              "menu_id" => "",
-            ));
-          ?>
-        </div>
-      
+        <?php
+          wp_nav_menu(array(
+            'theme_location'  => 'Footer',
+            'container'       => false,
+            'menu_class'      => 'ft-links',
+          ));
+        ?>
+      </div>
 
-      <!-- Col 3: Pages utiles -->
-      <div class="footer-col">
-        <h4>Informations</h4>
-          <?php
-            wp_nav_menu(array(
-              "menu" => "Footer2",
-              "theme_location" => "Footer2",
-              "depth" => 2,
-              "container" => "",
-              "container_id" => "",
-              "container_class" => "",
-              "menu_class" => "",
-              "menu_id" => "",
-            ));
-          ?>
-        </div>
+      <div class="ft-col">
+        <h4>Services</h4>
+        <ul class="ft-links">
+          <li><a href="#">Développement WordPress</a></li>
+          <li><a href="#">Intégration HTML/CSS</a></li>
+          <li><a href="#">Identité visuelle</a></li>
+          <li><a href="#">Maquettage Figma</a></li>
+          <li><a href="#">Organisation d'événements</a></li>
+        </ul>
+      </div>
 
-      <!-- Col 4: Coordonnées -->
-      <div class="footer-col">
+      <div class="ft-col">
         <h4>Contact</h4>
-        <ul class="footer-contact">
-          <li><i class="fas fa-map-marker-alt"></i> 12 Rue de la Construction, 75001 Paris</li>
-          <li><i class="fas fa-phone-alt"></i> 01 23 45 67 89</li>
-          <li><i class="fas fa-envelope"></i> <?php echo antispambot("contact@dwwm-batiment.fr"); ?></li>
-          <li><i class="fas fa-clock"></i> Lun-Ven : 8h-18h</li>
+        <ul class="ft-links">
+          <li><a href="mailto:burdloffkevin@gmail.com">burdloffkevin@gmail.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#contact">Formulaire de contact</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- Sub-footer -->
-    <div class="sub-footer">
-      <div class="container">
-        <p>&copy; <?php echo date('Y'); ?> DWWM Bâtiment &amp; Construction. Tous droits réservés.</p>
+    <div class="ft-bottom">
+      <span>© <?php echo date('Y'); ?> Kevin Burdloff — Beardwulf. Tous droits réservés.</span>
+      <div class="ft-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Plan du site</a>
       </div>
     </div>
-  </footer>
-
-  <!-- ========== LIGHTBOX ========== -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
-    <button class="lightbox-prev" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
-    <button class="lightbox-next" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
-    <div class="lightbox-content">
-      <img src="" alt="" id="lightbox-img">
-    </div>
   </div>
+</footer>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/scriptperso.js"></script>
 
-  <!-- ========== SCROLL TO TOP ========== -->
-  <button class="scroll-top" id="scrollTop" aria-label="Retour en haut">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <?php wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
 </html>
