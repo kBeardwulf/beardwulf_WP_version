@@ -1,4 +1,3 @@
-<!-- FOOTER -->
 <footer>
   <div class="ft">
     <div class="ft-top">
@@ -58,8 +57,6 @@
     </div>
   </div>
 </footer>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/scriptperso.js"></script>
-
 <?php wp_footer(); ?>
 </body>
 </html>

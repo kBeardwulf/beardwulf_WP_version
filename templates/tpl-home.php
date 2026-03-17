@@ -6,22 +6,27 @@
 get_header();
 ?>
 
-  <!-- HERO -->
+<!-- HERO -->
 <section class="hero" id="accueil">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-eyebrow"><span class="hero-dot"></span>Disponible pour de nouveaux projets</span>
-    <h1 class="hero-title">
-      <span class="t-lime">Créer,</span><br>
-      <span class="t-outline">Concevoir,</span><br>
-      Donner vie<br>
-      <span class="t-lime">à vos idées.</span>
-    </h1>
-    <p class="hero-sub">Développeur web, graphiste &amp; créateur d'événements — je combine technique et créativité pour donner une identité forte à vos projets, du pixel au présentiel.</p>
-    <div class="hero-actions">
-      <a href="#projets" class="btn-lime">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
-      <a href="#contact" class="btn-ghost">Me contacter <i class="fa-regular fa-envelope"></i></a>
+  <div class="hero-content hero-content--split">
+    <div class="hero-text">
+      <span class="hero-eyebrow"><span class="hero-dot"></span>Disponible pour de nouveaux projets</span>
+      <h1 class="hero-title">
+        <span class="t-lime">Créer,</span><br>
+        <span class="t-outline">Concevoir,</span><br>
+        Donner vie<br>
+        <span class="t-lime">à vos idées.</span>
+      </h1>
+      <p class="hero-sub">Développeur web, graphiste &amp; créateur d'événements — je combine technique et créativité pour donner une identité forte à vos projets, du pixel au présentiel.</p>
+      <div class="hero-actions">
+        <a href="#projets" class="btn-lime">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn-ghost">Me contacter <i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/HeroBannerIndex.jpg" alt="Kevin Burdloff — Beardwulf" />
     </div>
   </div>
 </section>
@@ -113,6 +118,16 @@ get_header();
     <h2 class="stitle reveal">Quelques projets</h2>
     <p class="sdesc reveal">Développement web, identités visuelles, événements — un aperçu de ce que je peux créer pour vous.</p>
     <div class="proj-grid">
+      <?php
+      $realisations = new WP_Query(array(
+          'post_type'      => 'realisation',
+          'posts_per_page' => 3,
+          'orderby'        => 'date',
+          'order'          => 'DESC'
+      ));
+
+      if( $realisations->have_posts() ):
+        while( $realisations->have_posts() ): $realisations->the_post(); ?>
       <div class="proj-card reveal">
         <div class="proj-thumb">WEB</div>
         <div class="proj-body">
@@ -122,7 +137,9 @@ get_header();
           <div class="proj-tags"><span class="proj-tag">WordPress</span><span class="proj-tag">PHP</span><span class="proj-tag">Tailwind</span></div>
         </div>
       </div>
-      <div class="proj-card reveal d1">
+      <?php endwhile; endif; wp_reset_postdata(); ?>
+
+      <!-- <div class="proj-card reveal d1">
         <div class="proj-thumb">DESIGN</div>
         <div class="proj-body">
           <div class="proj-type">Identité visuelle</div>
@@ -139,7 +156,7 @@ get_header();
           <p>Convention, festival, salon. Nombre de participants, outils, contexte. À remplacer par une vraie réalisation.</p>
           <div class="proj-tags"><span class="proj-tag">Notion</span><span class="proj-tag">Discord</span><span class="proj-tag">1000+ pers.</span></div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -148,11 +165,20 @@ get_header();
 <section id="apropos">
   <div class="si">
     <div class="apropos-g">
-      <div class="reveal">
-        <div class="apropos-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/HeroBannerIndex.jpg" alt="Kevin Burdloff — Beardwulf Events" />
-          <span class="apropos-img-label">Kevin Burdloff — Beardwulf</span>
+      <div class="swiper apropos-swiper">
+        <div class="swiper-wrapper">
+          <?php 
+          $images = get_field('galerie_apropos');
+          if($images): foreach($images as $image): ?>
+            <div class="swiper-slide">
+              <div class="apropos-img">
+                <?php echo wp_get_attachment_image($image['ID'], 'full'); ?>
+              </div>
+            </div>
+        <?php endforeach; endif; ?>
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
       </div>
       <div>
         <span class="eyebrow reveal">À propos</span>
@@ -167,6 +193,7 @@ get_header();
         </div>
         <a href="#contact" class="btn-lime reveal">Travaillons ensemble <i class="fa-solid fa-arrow-right"></i></a>
       </div>
+
     </div>
   </div>
 </section>

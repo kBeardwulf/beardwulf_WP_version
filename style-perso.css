@@ -1,0 +1,464 @@
+/*  aidé de bootstrap, j'effectue aussi mes propres resets persos
+    ainsi que toute modification de style général dont j'ai besoin */
+
+
+@font-face {
+    font-family: "robotocondregular";
+    src: url(/fonts/Roboto_Condensed-Regular.woff2);
+}
+
+@font-face {
+    font-family: "Impact";
+    src: url(/fonts/impact.woff2);
+}
+
+
+* {
+    color: var(--lightgreen);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*  pour me faciliter la vie et les changements futurs
+    je me suis fait mes propres variables.*/
+:root {
+    --font-para : "robotocondregular", sans-serif;
+    --font-h2h3 : "impact", sans-serif;
+    --darkgreen : #003429;
+    --leafgreen : #7A9E7E;
+    --lightgreen : #b3efb2;
+    --bluewhite : #e8f1f2;
+    --footercolor : #00251d;
+    --leafboxfontcolor : #000000;
+}
+
+/*  Ici j'ajuste les paramètres généraux souhaité
+    en consultant avec ma maquette. j'ai standardisé le rem
+    pour qu'il fasse 10px, me facilitant son utilisation
+    pour le responsive */
+html { font-size: 62.5%; }
+span { font-weight: bold; }
+
+p { font-family: var(--font-para);
+    font-size: 1.4rem; }
+
+a { font-family: var(--font-para);
+    font-size: 1.4rem;
+    transition: color 0.3s ease, opacity 0.3s ease; }
+
+h1 { font-size: 3.4rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+
+h1, h2, h3 { font-family: var(--font-para); }
+
+/* quelques ajustements pour contrer bootstrap */
+a, ul, li {
+    text-decoration: none;
+    padding-left: 0;
+}
+
+body {
+    background-color: var(--darkgreen);
+}
+
+.separator {
+    border: solid 1px var(--lightgreen);
+    width: 25%;
+    opacity: 0.5;
+    margin-bottom: 50px;
+}
+
+.separatorlarge {
+    border: solid var(--lightgreen) 1px;
+    width: 100%;
+    opacity: 0.5;
+    margin-top: 100px;
+}
+
+footer {
+    background-color: var(--footercolor);
+}
+
+/*  À partir d'ici je commence à toujours à mes IDs & Classes.
+    En commençant par la navbar. */
+
+#mobileNavbar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: var(--leafgreen);
+    /*  Au départ, mes SVGs étaient hors de ma ligne verte.
+        align-items & justify-content les ont remise à l'intérieur de la boite*/
+    align-items: center;
+    justify-content: space-around;
+    /*  Ici je fixe la barre mobile en bas de mon écran*/
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
+
+#navbarre a {
+    color: var(--lightgreen);
+}
+
+#navbarre a:hover {
+    color: #e8f1f2;
+}
+ /* Bouton de le navbar */
+.contactBtn {
+    background-color: var(--leafgreen);
+    height: 33px;
+    width: 90px;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+#navbarre .contactBtn a {
+    font-family: var(--font-para);
+    font-size: 16px;
+    color: var(--leafboxfontcolor);
+}
+
+.contactBtn:hover {
+    background-color: var(--lightgreen);
+}
+
+/* Bouton de bas de page */
+.contactBttn {
+    background-color: var(--leafgreen);
+    height: 38px;
+    width: 160px;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+.contactBttn:hover {
+    background-color: var(--lightgreen);
+}
+
+.contactBttn a {
+    font-size: 2rem;
+    color: var(--leafboxfontcolor);
+}
+
+.herobanner img {
+    width: 430px;
+    height: auto;
+} 
+
+
+/*  Comme expliqué en html, c'est pour personnaliser
+    le conteneur de mes images.
+    Pour le border radius, j'utilisais 10px, puis j'ai réalisé
+    que je pouvais le rendre responsive en utilisant le rem */
+.creativebox .container {
+    height: 60px;
+    width: 310px;
+    background-color: var(--leafgreen);
+    border-radius: 1rem;
+}
+
+/*  Même traitement pour les logos en catégorie devweb */
+.devbox .container {
+    height: 60px;
+    width: 270px;
+    background-color: var(--darkgreen);
+    border-radius: 1rem;
+    border: solid var(--leafgreen) 1px;
+}
+
+/*  Création d'une box verte pour mon design du texte
+    des compétences Evènementielles */
+.greenbox {
+    height: 270px;
+    width: 350px;
+    background-color: var(--leafgreen);
+    border-radius: 1rem;
+}
+
+.mobileeventimg {
+    height: 220px;
+    width: 365px;
+}
+
+.desktopeventimg {
+    display: none;
+}
+
+.greenbox p {
+    color: var(--leafboxfontcolor);
+}
+
+/*  Boites de "méthodes de travail" */
+.workflowtext {
+    width: 180px;
+    height: 295px;
+    background-color: var(--leafgreen);
+    border-radius: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.workflowtext p {
+    color: var(--leafboxfontcolor);
+    padding-top: 50px;
+    font-size: 1.2rem;
+}
+
+.workflowCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.workflowCard h3 {
+    font-family: var(--font-h2h3);
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    height: 38px;
+    border: solid 1px var(--lightgreen);
+    border-radius: 1rem;
+    padding: 6px 15px;
+
+}
+
+.workflowCard img {
+    margin-top: 25px;
+    margin-bottom: -60px;
+    z-index: 1;
+    width: 115px;
+    height: 115px;
+}
+
+
+/* Phrase du bouton contact du bas */
+#redirectContact p {
+    margin-top: 55px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+
+/**********************************/
+/*Section footer*/
+#footer {
+    width: 430px;
+    height: 370px;
+    font-family: var(--font-para);
+}
+
+#footer a, #footer p {
+    color: var(--leafgreen);
+}
+
+.emailcontact img {
+    margin-right: 5px;
+    margin-bottom: 9px;
+}
+
+.footerleft p {
+    margin-top: 5px;
+}
+
+.footerleft span {
+    color: var(--leafgreen);
+    font-weight: 800;
+}
+
+.footerleft img {
+    margin-top: -30px;
+}
+
+.footerright div {
+    margin-bottom: 5px;
+}
+
+.footerright p {
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+/************************************************************/
+/*  J'ai commencé par des medias query qui cache les navbar inutile en fonction
+    de la taille de l'écran.*/
+
+@media (max-width: 430px) {
+    #navbarre {
+        display: none;
+    }
+
+}
+
+@media (min-width: 431px) {
+    #mobileNavbar {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* Responsive de certains éléments en tablette et écran petit portable */
+    .herobanner img {
+        width: 100%;
+        height: auto;
+    }
+
+    #footer {
+        width: 100%;
+    }
+
+    .workflowCard {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+    
+
+@media (min-width: 1400px) {
+
+    .herobanner img {
+
+        width: 100%;
+        max-width: 1440px;
+        height: auto;
+    }
+
+    p { font-family: var(--font-para);
+        font-size: 1.6rem; }
+
+    a { font-family: var(--font-para);
+        font-size: 1.6rem;
+        text-decoration: none; }
+
+    h2 { font-size: 2.4rem; }
+    h3 { font-size: 2.2rem; }
+
+    .boxperso {
+        width: 1000px;
+    }
+
+    .devbox .container {
+        height: 60px;
+        width: 270px;
+        background-color: var(--leafgreen);
+        border-radius: 1rem;
+        
+    }
+
+    .greenbox {
+        height: 120px;
+        width: 100%;
+        background-color: var(--darkgreen);
+        border-radius: 1rem;
+        border: solid 1px var(--lightgreen);
+    }
+
+    /* La text box des compétences événementielles */
+        .greenbox p {
+            color: var(--lightgreen);
+            padding: 0 5px;
+        }
+
+    #eventimg img {
+        height: 260px;
+        width: 430px;
+    }
+
+    /* les trois photos evenementielles*/
+    .desktopeventimg {
+        display: flex;
+        height: 230px;
+        width: 370px;
+        border-radius: 1rem;
+
+    }
+
+    /* Il s'agit des boites vertes dans "Méthodes de travail"*/
+    .workflowCard h3 {
+        font-family: var(--font-h2h3);
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        border: solid 1px var(--lightgreen);
+        border-radius: 1rem;
+        padding: 6px 15px;
+
+    }
+
+    .workflowCard img {
+        margin-top: 25px;
+        margin-bottom: -80px;
+        z-index: 1;
+        width: 150px;
+        height: 150px;
+    }
+
+    .workflowtext {
+        width: 270px;
+        height: 350px;
+        background-color: var(--leafgreen);
+        border-radius: 1rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .workflowtext p {
+        color: var(--leafboxfontcolor);
+        padding-top: 80px;
+        font-size: 1.6rem;
+    }
+
+    /* Phrase du bouton contact bas de page*/
+    #redirectContact .catchphrase {
+        font-size: 3rem;
+    }
+
+    /* Bouton de bas de page */
+    .contactBttn {
+        background-color: var(--leafgreen);
+        height: 60px;
+        width: 280px;
+    }
+
+    .contactBttn a {
+        font-size: 3.5rem;
+    }
+
+    /*  Section footer */
+    #footer {
+        width: 100%;
+        height: auto;
+    }
+
+    .footerleft {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .footerleft .logo {
+        margin-top: 5px;
+        margin-right: 20px;
+    }
+
+    .footerleft .separator {
+        display: none;
+    }
+
+    .footerright {
+        display: flex;
+        justify-content: space-around;
+        width: 400px;
+        text-align: center;
+    }
+}

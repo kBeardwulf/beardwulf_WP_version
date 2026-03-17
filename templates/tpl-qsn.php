@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: Qui sommes-nous
+  Template Name: Qsn
   Description: page de qui nous sommes
 */
 get_header();
