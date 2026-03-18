@@ -91,11 +91,3 @@ function beardwulf_taxonomies() {
     );
 }
 add_action('init', 'beardwulf_taxonomies');
-
-/* Fonction pour mon image en background */
-function beardwulf_inline_styles() {
-    $img_url = get_template_directory_uri() . '/assets/img/HeroBannerIndex.jpg';
-    $css = '.hero-bg { background-image: url("' . $img_url . '"); }';
-    wp_add_inline_style( 'style-perso', $css );
-}
-add_action( 'wp_enqueue_scripts', 'beardwulf_inline_styles' );

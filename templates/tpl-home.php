@@ -12,21 +12,25 @@ get_header();
   <div class="hero-overlay"></div>
   <div class="hero-content hero-content--split">
     <div class="hero-text">
-      <span class="hero-eyebrow"><span class="hero-dot"></span>Disponible pour de nouveaux projets</span>
+      <span class="hero-eyebrow"><span class="hero-dot"></span><?php the_field('tag_dispo'); ?></span>
       <h1 class="hero-title">
-        <span class="t-lime">Créer,</span><br>
-        <span class="t-outline">Concevoir,</span><br>
-        Donner vie<br>
-        <span class="t-lime">à vos idées.</span>
+        <span class="t-lime"><?php the_field('hero_title_ligne_1'); ?></span><br>
+        <span class="t-outline"><?php the_field('hero_title_ligne_2'); ?></span><br>
+        <?php the_field('hero_title_ligne_3'); ?><br>
+        <span class="t-lime"><?php the_field('hero_title_ligne_4'); ?></span>
       </h1>
-      <p class="hero-sub">Développeur web, graphiste &amp; créateur d'événements — je combine technique et créativité pour donner une identité forte à vos projets, du pixel au présentiel.</p>
+      <p class="hero-sub"><?php the_field('hero_paragraphe'); ?></p>
       <div class="hero-actions">
-        <a href="#projets" class="btn-lime">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#contact" class="btn-ghost">Me contacter <i class="fa-regular fa-envelope"></i></a>
+        <a href="#projets" class="btn-lime"><?php the_field('btn_1'); ?> <?php the_field('icone_btn_1'); ?></a>
+        <a href="#contact" class="btn-ghost"><?php the_field('btn_2'); ?> <?php the_field('icone_btn_2'); ?></a>
       </div>
     </div>
     <div class="hero-photo">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/HeroBannerIndex.jpg" alt="Kevin Burdloff — Beardwulf" />
+      <?php 
+        $hero_img = get_field('image_droite');
+        if($hero_img):
+          echo wp_get_attachment_image($hero_img['ID'], 'full'); ?>
+      <?php endif; ?>
     </div>
   </div>
 </section>
@@ -34,41 +38,37 @@ get_header();
 <!-- STATS BAND -->
 <div class="stats-band">
   <div class="stats-inner">
-    <div class="stat"><span class="stat-n">7+</span><span class="stat-l">ans dans l'événementiel</span></div>
+    <div class="stat"><span class="stat-n"><?php the_field('chiffre_1'); ?></span><span class="stat-l"><?php the_field('descriptif_1'); ?></span></div>
     <div class="stat-sep"></div>
-    <div class="stat"><span class="stat-n">1000+</span><span class="stat-l">participants à mes events</span></div>
+    <div class="stat"><span class="stat-n"><?php the_field('chiffre_2'); ?></span><span class="stat-l"><?php the_field('descriptif_2'); ?></span></div>
     <div class="stat-sep"></div>
-    <div class="stat"><span class="stat-n">3</span><span class="stat-l">domaines d'expertise</span></div>
+    <div class="stat"><span class="stat-n"><?php the_field('chiffre_3'); ?></span><span class="stat-l"><?php the_field('descriptif_3'); ?></span></div>
     <div class="stat-sep"></div>
-    <div class="stat"><span class="stat-n">France</span><span class="stat-l">entière</span></div>
+    <div class="stat"><span class="stat-n"><?php the_field('chiffre_4'); ?></span><span class="stat-l"><?php the_field('descriptif_4'); ?></span></div>
   </div>
 </div>
 
 <!-- COMPÉTENCES -->
 <section id="competences">
   <div class="si">
-    <span class="eyebrow reveal">Savoir-faire</span>
-    <h2 class="stitle reveal">Mes domaines<br>d'expertise</h2>
-    <p class="sdesc reveal">Trois univers complémentaires pour aborder vos projets avec une vision 360°, de la conception à la réalisation.</p>
+    <span class="eyebrow reveal"><?php the_field('sous_titre_au_dessus_du_titre'); ?></span>
+    <h2 class="stitle reveal"><?php the_field('titre_ligne_1_comp'); ?><br><?php the_field('titre_ligne_2_comp'); ?></h2>
+    <p class="sdesc reveal"><?php the_field('descriptif_comp'); ?></p>
     <div class="skills-grid">
-      <div class="skill-card reveal">
-        <div class="skill-ic"><i class="fa-solid fa-code"></i></div>
-        <h3>Développement Web</h3>
-        <p>De la maquette au déploiement, je construis des interfaces modernes, performantes et accessibles — avec une vraie sensibilité design.</p>
-        <div class="pills"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span class="pill">PHP</span><span class="pill">SQL</span><span class="pill">Bootstrap</span><span class="pill">Tailwind</span><span class="pill">WordPress</span></div>
-      </div>
-      <div class="skill-card reveal d1">
-        <div class="skill-ic"><i class="fa-solid fa-pen-nib"></i></div>
-        <h3>Graphisme &amp; Design</h3>
-        <p>Identités visuelles, maquettes, illustrations — je maîtrise les outils professionnels de la création graphique et UX.</p>
-        <div class="pills"><span class="pill">Figma</span><span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">InDesign</span><span class="pill">Affinity</span><span class="pill">Clip Studio</span></div>
-      </div>
-      <div class="skill-card reveal d2">
-        <div class="skill-ic"><i class="fa-solid fa-calendar-star"></i></div>
-        <h3>Événementiel</h3>
-        <p>7 ans à organiser des événements à travers la France — de petits stands à des conventions de 1000+ personnes avec une grande autonomie.</p>
-        <div class="pills"><span class="pill">Notion</span><span class="pill">Discord</span><span class="pill">Gestion de projet</span><span class="pill">Autonomie</span><span class="pill">Adaptabilité</span></div>
-      </div>
+
+      <?php if( have_rows('repet_comp') ) : while( have_rows('repet_comp') ): the_row(); ?>
+        <div class="skill-card reveal">
+          <div class="skill-ic"><?php the_sub_field('icone_comp'); ?></div>
+          <h3><?php the_sub_field('titre_comp'); ?></h3>
+          <p><?php the_sub_field('descriptif_comp'); ?></p>
+
+          <div class="pills">
+            <?php if( have_rows('les_pills') ) : while( have_rows('les_pills') ): the_row(); ?>
+              <span class="pill"><?php the_sub_field('nom_de_pill'); ?></span>
+            <?php endwhile; endif; ?>
+          </div>
+        </div>
+      <?php endwhile; endif; ?>
     </div>
   </div>
 </section>
@@ -76,37 +76,24 @@ get_header();
 <!-- MÉTHODE -->
 <section id="methode">
   <div class="si">
-    <span class="eyebrow reveal">Process</span>
-    <h2 class="stitle reveal">Comment je travaille</h2>
-    <p class="sdesc reveal">4 étapes claires pour des projets livrés dans les délais et conformes à vos attentes — sans mauvaise surprise.</p>
+    <span class="eyebrow reveal"><?php the_field('sous_titre_au_dessus_methode'); ?></span>
+    <h2 class="stitle reveal"><?php the_field('titre_methode'); ?></h2>
+    <p class="sdesc reveal"><?php the_field('description_methodes'); ?></p>
     <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <div class="step-emoji">💬</div>
-        <h3>Prise de contact</h3>
-        <p>On discute de vos besoins, objectifs et contraintes. L'étape clé pour poser des bases solides avant de démarrer.</p>
-        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-      </div>
-      <div class="step reveal d1">
-        <div class="step-num">02</div>
-        <div class="step-emoji">✏️</div>
-        <h3>Ébauches</h3>
-        <p>Maquettes et premières propositions. On affine ensemble la direction créative avant la production.</p>
-        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-      </div>
-      <div class="step reveal d2">
-        <div class="step-num">03</div>
-        <div class="step-emoji">📦</div>
-        <h3>Remise du projet</h3>
-        <p>Livraison du projet finalisé avec tous les fichiers sources et documentations nécessaires à la prise en main.</p>
-        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-      </div>
-      <div class="step reveal d3">
-        <div class="step-num">04</div>
-        <div class="step-emoji">✅</div>
-        <h3>Validation</h3>
-        <p>Ajustements et retouches finales selon vos retours. Validé lorsque vous êtes pleinement satisfait.</p>
-      </div>
+
+      <?php if( have_rows('repet_methodes') ) : while( have_rows('repet_methodes') ): the_row(); ?>
+        <div class="step reveal">
+          <div class="step-num"><?php the_sub_field('numero_etape'); ?></div>
+          <div class="step-emoji"><?php the_sub_field('emoji_pour_faire_joli'); ?></div>
+          <h3><?php the_sub_field('titre_etape'); ?></h3>
+          <p><?php the_sub_field('descript_etape'); ?></p>
+
+          <?php if( get_sub_field('icone_suivante') ): ?>
+            <span class="step-arrow"><?php the_sub_field('icone_suivante'); ?></span>
+          <?php endif; ?>
+        </div>
+      <?php endwhile; endif; ?>
+      
     </div>
   </div>
 </section>
@@ -114,49 +101,46 @@ get_header();
 <!-- PROJETS -->
 <section id="projets">
   <div class="si">
-    <span class="eyebrow reveal">Réalisations</span>
-    <h2 class="stitle reveal">Quelques projets</h2>
-    <p class="sdesc reveal">Développement web, identités visuelles, événements — un aperçu de ce que je peux créer pour vous.</p>
+    <span class="eyebrow reveal"><?php the_field('sous_titre_au_dessus_blog'); ?></span>
+    <h2 class="stitle reveal"><?php the_field('titre_real'); ?></h2>
+    <p class="sdesc reveal"><?php the_field('desc_real'); ?></p>
     <div class="proj-grid">
-      <?php
-      $realisations = new WP_Query(array(
-          'post_type'      => 'realisation',
-          'posts_per_page' => 3,
-          'orderby'        => 'date',
-          'order'          => 'DESC'
-      ));
 
-      if( $realisations->have_posts() ):
-        while( $realisations->have_posts() ): $realisations->the_post(); ?>
+      <?php
+        $realisations = new WP_Query(array(
+            'post_type'      => 'realisation',
+            'posts_per_page' => 3,
+            'orderby'        => 'date',
+            'order'          => 'DESC'
+        ));
+
+        if( $realisations->have_posts() ):
+          while( $realisations->have_posts() ): $realisations->the_post();
+      ?>
+
       <div class="proj-card reveal">
-        <div class="proj-thumb">WEB</div>
+        <div class="proj-thumb">
+          <?php if( has_post_thumbnail() ): ?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
+          <?php endif; ?>
+        </div>
+
         <div class="proj-body">
-          <div class="proj-type">Développement Web</div>
-          <h3>Nom du projet</h3>
-          <p>Description du projet, ses enjeux, la solution mise en place. À remplacer par une vraie réalisation.</p>
-          <div class="proj-tags"><span class="proj-tag">WordPress</span><span class="proj-tag">PHP</span><span class="proj-tag">Tailwind</span></div>
+          <?php $cats = get_the_terms(get_the_ID(), 'proj_categorie');
+            if($cats): echo '<div class="proj-type">' . esc_html($cats[0]->name) . '</div>';
+          endif; ?>
+          <h3><?php the_title(); ?></h3>
+          <p><?php the_excerpt(); ?></p>
+
+          <div class="proj-tags">
+            <?php $tags = get_the_terms(get_the_ID(), 'proj_tag');
+              if($tags): foreach($tags as $tag): ?>
+                <span class="proj-tag"><?php echo esc_html($tag->name); ?></span>
+            <?php endforeach; endif; ?>
+          </div>
         </div>
       </div>
       <?php endwhile; endif; wp_reset_postdata(); ?>
-
-      <!-- <div class="proj-card reveal d1">
-        <div class="proj-thumb">DESIGN</div>
-        <div class="proj-body">
-          <div class="proj-type">Identité visuelle</div>
-          <h3>Nom du projet</h3>
-          <p>Branding, charte graphique, supports print ou digitaux. À remplacer par une vraie réalisation.</p>
-          <div class="proj-tags"><span class="proj-tag">Illustrator</span><span class="proj-tag">Figma</span></div>
-        </div>
-      </div>
-      <div class="proj-card reveal d2">
-        <div class="proj-thumb">EVENT</div>
-        <div class="proj-body">
-          <div class="proj-type">Événementiel</div>
-          <h3>Nom de l'événement</h3>
-          <p>Convention, festival, salon. Nombre de participants, outils, contexte. À remplacer par une vraie réalisation.</p>
-          <div class="proj-tags"><span class="proj-tag">Notion</span><span class="proj-tag">Discord</span><span class="proj-tag">1000+ pers.</span></div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
@@ -175,25 +159,26 @@ get_header();
                 <?php echo wp_get_attachment_image($image['ID'], 'full'); ?>
               </div>
             </div>
-        <?php endforeach; endif; ?>
+          <?php endforeach; endif; ?>
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      </div>
-      <div>
-        <span class="eyebrow reveal">À propos</span>
-        <h2 class="stitle reveal">Polyvalent<br>par passion.</h2>
-        <p class="sdesc reveal" style="max-width:100%">Passionné par la création sous toutes ses formes, j'ai développé une expertise rare à la croisée du développement web, du graphisme et de l'événementiel. Cette triple compétence me permet d'aborder vos projets dans leur globalité.</p>
-        <p class="sdesc reveal" style="max-width:100%;margin-top:1rem">Avec 7 ans d'expérience événementielle — des petits stands en conventions jusqu'aux événements de plus de 1000 personnes à travers toute la France — j'ai appris à piloter des projets complexes avec rigueur et sang-froid.</p>
-        <div class="values reveal">
-          <div class="value"><div class="value-ic"><i class="fa-solid fa-bolt fa-xs"></i></div><span>Grande autonomie et réactivité</span></div>
-          <div class="value"><div class="value-ic"><i class="fa-solid fa-shuffle fa-xs"></i></div><span>Adaptabilité dans tous les environnements</span></div>
-          <div class="value"><div class="value-ic"><i class="fa-solid fa-handshake fa-xs"></i></div><span>Communication transparente à chaque étape</span></div>
-          <div class="value"><div class="value-ic"><i class="fa-solid fa-award fa-xs"></i></div><span>Exigence constante sur la qualité rendue</span></div>
-        </div>
-        <a href="#contact" class="btn-lime reveal">Travaillons ensemble <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
 
+      <div>
+        <span class="eyebrow reveal"><?php the_field('sous_titre_apropos'); ?></span>
+        <h2 class="stitle reveal"><?php the_field('titre_ligne_1_apropos'); ?><br><?php the_field('titre_ligne_2_apropos'); ?></h2>
+        <p class="sdesc reveal" style="max-width:100%"><?php the_field('paragraphe_1_apropos'); ?></p>
+        <p class="sdesc reveal" style="max-width:100%;margin-top:1rem"><?php the_field('paragraphe_2_apropos'); ?></p>
+        <div class="values reveal">
+          <?php if( have_rows('soft_skills_apropos') ) : while( have_rows('soft_skills_apropos') ): the_row(); ?>
+            <div class="value">
+              <div class="value-ic"><?php the_sub_field('icone_apropos'); ?></div>
+              <span><?php the_sub_field('descript_apropos'); ?></span>
+            </div>
+          <?php endwhile; endif; ?>
+        </div>
+        <a href="#contact" class="btn-lime reveal"><?php the_field('btn_apropos'); ?> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
     </div>
   </div>
 </section>
@@ -203,35 +188,34 @@ get_header();
   <div class="si">
     <div class="contact-g">
       <div>
-        <span class="eyebrow reveal">Contact</span>
-        <h2 class="stitle reveal">Parlons de<br>votre projet.</h2>
-        <p class="sdesc reveal">Une idée, une question, un projet ? N'hésitez pas — je réponds généralement sous 24h.</p>
+        <span class="eyebrow reveal"><?php the_field('sous_titre_au_dessus_contact'); ?></span>
+        <h2 class="stitle reveal"><?php the_field('titre_ligne_1_contact'); ?><br><?php the_field('titre_ligne_2_contact'); ?></h2>
+        <p class="sdesc reveal"><?php the_field('phrase_accroche_contact'); ?></p>
         <div class="contact-info reveal">
-          <div class="ci">
-            <div class="ci-ic"><i class="fa-regular fa-envelope"></i></div>
-            <div><div class="ci-label">Email</div><a href="mailto:burdloffkevin@gmail.com">burdloffkevin@gmail.com</a></div>
-          </div>
-          <div class="ci">
-            <div class="ci-ic"><i class="fa-brands fa-linkedin"></i></div>
-            <div><div class="ci-label">LinkedIn</div><a href="#">Votre profil LinkedIn</a></div>
-          </div>
-          <div class="ci">
-            <div class="ci-ic"><i class="fa-solid fa-location-dot"></i></div>
-            <div><div class="ci-label">Disponibilité</div><span>France — télétravail &amp; présentiel</span></div>
-          </div>
+          <?php if( have_rows('repet_contact') ): while( have_rows('repet_contact') ): the_row(); ?>
+            <div class="ci">
+              <div class="ci-ic"><?php the_sub_field('icone_contact') ?></div>
+              <div>
+                <div class="ci-label"><?php the_sub_field('label_contact'); ?></div>
+
+                <?php if( get_sub_field('type_contact') == 'mail' ): ?>
+                  <a href="mailto:<?php the_sub_field('email_contact'); ?>"><?php the_sub_field('email_contact'); ?></a>
+                <?php elseif( get_sub_field('type_contact') == 'lien' ): ?>
+                  <a href="<?php the_sub_field('lien_contact'); ?>" target="_blank" rel="noopener noreferrer"><?php the_sub_field('label_du_lien'); ?></a>
+                <?php else: ?>
+                  <span><?php the_sub_field('texte_contact'); ?></span>
+                <?php endif; ?>
+
+              </div>
+            </div>
+          <?php endwhile; endif; ?>
         </div>
-      </div>
+      </div> <!-- ✅ ferme le div gauche -->
       <div class="cform reveal d1">
-        <h3>Envoyer un message</h3>
-        <div class="fg"><label>Votre nom</label><input type="text" placeholder="Jean Dupont" /></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="jean@exemple.fr" /></div>
-        <div class="fg"><label>Type de projet</label><select><option>Développement web</option><option>Design graphique</option><option>Événementiel</option><option>Plusieurs domaines</option><option>Autre</option></select></div>
-        <div class="fg"><label>Message</label><textarea placeholder="Décrivez votre projet en quelques lignes..."></textarea></div>
-        <button class="btn-submit">Envoyer <i class="fa-solid fa-paper-plane"></i></button>
+        <h3><?php the_field('titre_droite_contact'); ?></h3>
+        <?php echo do_shortcode('[contact-form-7 id="8d35c62" title="Formulaire de contact page accueil"]'); ?>
       </div>
     </div>
   </div>
 </section>
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
