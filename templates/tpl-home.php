@@ -105,7 +105,6 @@ get_header();
     <h2 class="stitle reveal"><?php the_field('titre_real'); ?></h2>
     <p class="sdesc reveal"><?php the_field('desc_real'); ?></p>
     <div class="proj-grid">
-
       <?php
         $realisations = new WP_Query(array(
             'post_type'      => 'realisation',
@@ -113,25 +112,20 @@ get_header();
             'orderby'        => 'date',
             'order'          => 'DESC'
         ));
-
         if( $realisations->have_posts() ):
           while( $realisations->have_posts() ): $realisations->the_post();
       ?>
-
       <div class="proj-card reveal">
         <div class="proj-thumb">
-          <?php if( has_post_thumbnail() ): ?>
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
-          <?php endif; ?>
+          <a href="<?php the_permalink(); ?>" class="proj-thumb-link"></a>
+          <?php if( has_post_thumbnail() ): the_post_thumbnail('large'); endif; ?>
         </div>
-
         <div class="proj-body">
           <?php $cats = get_the_terms(get_the_ID(), 'proj_categorie');
             if($cats): echo '<div class="proj-type">' . esc_html($cats[0]->name) . '</div>';
           endif; ?>
-          <h3><?php the_title(); ?></h3>
+          <h3><a href="<?php the_permalink(); ?>" class="proj-title-link"><?php the_title(); ?></a></h3>
           <p><?php the_excerpt(); ?></p>
-
           <div class="proj-tags">
             <?php $tags = get_the_terms(get_the_ID(), 'proj_tag');
               if($tags): foreach($tags as $tag): ?>

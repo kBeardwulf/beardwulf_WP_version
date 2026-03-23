@@ -1,0 +1,519 @@
+/* ═══════════════════════════════════════════
+   PAGE DÉTAIL SERVICE
+   ═══════════════════════════════════════════ */
+ 
+/* ── HERO ── */
+ 
+.sdet-hero {
+    padding: 8rem 2rem 5rem;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+}
+ 
+.sdet-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+ 
+.sdet-hero .stitle {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin-bottom: 1.2rem;
+}
+ 
+.sdet-hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+ 
+.sdet-hero-ic {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 24px;
+    background: rgba(144,240,160,0.05);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--lime);
+}
+
+.sdet-hero .single-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.sdet-hero .single-back:hover {
+    color: var(--lime);
+}
+ 
+ 
+/* ── SECTIONS ── */
+ 
+.sdet-section {
+    padding: 7rem 2rem;
+    background: var(--forest);
+}
+ 
+.sdet-process-section {
+    padding: 7rem 2rem;
+    background: var(--dark);
+}
+ 
+.sdet-tech-section {
+    padding: 7rem 2rem;
+    background: var(--forest);
+}
+ 
+.sdet-real-section {
+    padding: 7rem 2rem;
+    background: var(--dark);
+}
+ 
+.sdet-contact-section {
+    padding: 7rem 2rem;
+    background: var(--forest);
+}
+ 
+ 
+/* ── GRILLE PRESTATIONS ── */
+ 
+.sdet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+ 
+.sdet-card {
+    background: rgba(144,240,160,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.25s, background 0.25s;
+}
+ 
+.sdet-card:hover {
+    border-color: var(--lime);
+    background: rgba(144,240,160,0.05);
+}
+ 
+.sdet-card-ic {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--lime);
+}
+ 
+.sdet-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+}
+ 
+.sdet-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    flex: 1;
+}
+ 
+ 
+/* ── PROCESS ── */
+ 
+.sdet-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4rem;
+    max-width: 800px;
+}
+ 
+.sdet-step {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left 0.2s;
+}
+ 
+.sdet-step:last-child {
+    border-bottom: none;
+}
+ 
+.sdet-step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1;
+    -webkit-text-stroke: 1.5px rgba(144,240,160,0.3);
+    color: transparent;
+    flex-shrink: 0;
+    width: 60px;
+    transition: -webkit-text-stroke-color 0.25s;
+}
+ 
+.sdet-step:hover .sdet-step-num {
+    -webkit-text-stroke-color: var(--lime);
+}
+ 
+.sdet-step-body h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+}
+ 
+.sdet-step-body p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+ 
+ 
+/* ── TECHNOLOGIES ── */
+ 
+.sdet-tech-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 3rem 0 1.2rem;
+}
+ 
+.sdet-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+ 
+.sdet-tech-item {
+    background: rgba(144,240,160,0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    cursor: default;
+}
+ 
+.sdet-tech-item:hover {
+    border-color: var(--lime);
+    background: rgba(144,240,160,0.08);
+    transform: translateY(-3px);
+}
+ 
+.sdet-tech-item i {
+    font-size: 1.4rem;
+    color: var(--lime);
+}
+ 
+.sdet-tech-item span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-align: center;
+}
+ 
+.sdet-tech-item--muted {
+    opacity: 0.55;
+    border-style: dashed;
+}
+ 
+.sdet-tech-item--muted:hover {
+    opacity: 1;
+}
+ 
+ 
+/* ── RESPONSIVE ── */
+ 
+@media (max-width: 1024px) {
+    .sdet-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+ 
+    .sdet-hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    .sdet-hero-ic {
+        width: 120px;
+        height: 120px;
+        font-size: 3.5rem;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .sdet-step {
+        gap: 1.5rem;
+    }
+ 
+    .sdet-tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+}
+
+/* ═══════════════════════════════════════════
+   AJOUT CSS - SERVICE IDENTITÉ VISUELLE
+   ═══════════════════════════════════════════ */
+ 
+/* ── FORMATS DE LIVRAISON ── */
+ 
+.sdet-graph-formats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+ 
+.sdet-format-card {
+    background: rgba(144,240,160,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+ 
+.sdet-format-card:hover {
+    border-color: var(--lime);
+    background: rgba(144,240,160,0.06);
+}
+ 
+.sdet-format-card > i {
+    font-size: 1.3rem;
+    color: var(--lime);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+ 
+.sdet-format-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+}
+ 
+.sdet-format-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+ 
+@media (max-width: 768px) {
+    .sdet-graph-formats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   AJOUT CSS - SERVICE ÉVÉNEMENTIEL
+   ═══════════════════════════════════════════ */
+ 
+/* ── STATS BAND ── */
+ 
+.sdet-stats-band {
+    background: var(--lime);
+    padding: 1.2rem 2rem;
+}
+ 
+.sdet-stats-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ 
+.sdet-stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+ 
+.sdet-stat-n {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--dark);
+    line-height: 1;
+}
+ 
+.sdet-stat-l {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(8,26,18,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+ 
+.sdet-stat-sep {
+    width: 1px;
+    height: 32px;
+    background: rgba(8,26,18,0.2);
+}
+ 
+ 
+/* ── SOFT SKILLS ── */
+ 
+.sdet-event-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+ 
+ 
+/* ── SINJ CREW ── */
+ 
+.sdet-sinj-section {
+    padding: 7rem 2rem;
+    background: var(--dark);
+}
+ 
+.sdet-sinj-g {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 5rem;
+    align-items: center;
+}
+ 
+.sdet-sinj-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+ 
+.sdet-sinj-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+ 
+.sdet-sinj-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(144,240,160,0.04);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+}
+ 
+.sdet-sinj-badge:hover {
+    border-color: var(--lime);
+    background: rgba(144,240,160,0.07);
+}
+ 
+.sdet-sinj-badge > i {
+    font-size: 3rem;
+    color: var(--lime);
+}
+ 
+.sdet-sinj-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+}
+ 
+.sdet-sinj-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.sdet-sinj-stats .sdet-stat-n {
+    color: var(--lime);
+}
+
+.sdet-sinj-stats .sdet-stat-l {
+    color: var(--muted);
+}
+ 
+ 
+/* ── RESPONSIVE ── */
+ 
+@media (max-width: 1024px) {
+    .sdet-sinj-g {
+        grid-template-columns: 1fr;
+    }
+ 
+    .sdet-sinj-badge {
+        flex-direction: row;
+        text-align: left;
+        padding: 2rem;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .sdet-stats-inner {
+        gap: 1.5rem;
+    }
+ 
+    .sdet-stat-sep {
+        display: none;
+    }
+}

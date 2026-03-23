@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════
+   PAGE RÉALISATIONS
+   ═══════════════════════════════════════════ */
+ 
+/* ── HERO ── */
+ 
+.arch-hero {
+    padding: 10rem 2rem 4rem;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+}
+ 
+.arch-hero .stitle {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin-bottom: 1.2rem;
+}
+ 
+ 
+/* ── BARRE DE RECHERCHE ── */
+ 
+.arch-search {
+    margin-top: 2.5rem;
+    max-width: 540px;
+}
+ 
+.arch-search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+ 
+.arch-search-ic {
+    position: absolute;
+    left: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+ 
+.arch-search-input {
+    width: 100%;
+    background: rgba(144,240,160,0.05);
+    border: 1px solid rgba(144,240,160,0.2);
+    border-radius: 8px;
+    padding: 0.85rem 1rem 0.85rem 2.8rem;
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+ 
+.arch-search-input::placeholder {
+    color: var(--muted);
+}
+ 
+.arch-search-input:focus {
+    border-color: var(--lime);
+    background: rgba(144,240,160,0.08);
+}
+ 
+ 
+/* ── FILTRES ── */
+ 
+.arch-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+ 
+.arch-filter {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+ 
+.arch-filter:hover {
+    color: var(--lime);
+    border-color: rgba(144,240,160,0.4);
+    background: rgba(144,240,160,0.04);
+}
+ 
+.arch-filter.active {
+    background: var(--lime);
+    color: var(--dark);
+    border-color: var(--lime);
+}
+ 
+ 
+/* ── SECTION GRILLE ── */
+ 
+.arch-section {
+    padding: 5rem 2rem;
+    background: var(--forest);
+    min-height: 50vh;
+}
+ 
+.arch-grid {
+    margin-top: 0;
+}
+ 
+ 
+/* ── CARTE — lien sans style de lien ── */
+ 
+.arch-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.arch-card-link h3 {
+    color: var(--white);
+}
+
+.arch-card-link p {
+    color: var(--muted);
+}
+
+.arch-card-link .proj-type {
+    color: var(--lime);
+}
+
+.arch-card-link .proj-tag {
+    color: rgba(144,240,160,0.6);
+    text-decoration: none;
+}
+ 
+.arch-card {
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+ 
+ 
+/* ── MESSAGE VIDE ── */
+ 
+.arch-empty {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 5rem 2rem;
+    color: var(--muted);
+    text-align: center;
+}
+ 
+.arch-empty i {
+    font-size: 2.5rem;
+    color: rgba(144,240,160,0.2);
+}
+ 
+.arch-empty p {
+    font-size: 1rem;
+    color: var(--muted);
+}
+ 
+ 
+/* ── CTA FINAL ── */
+
+.arch-cta-section {
+    background: var(--dark);
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.arch-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.arch-cta .stitle {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.arch-cta .sdesc {
+    color: var(--muted);
+    max-width: 500px;
+}
+
+.arch-cta .btn-lime {
+    background: var(--lime);
+    color: var(--dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.arch-cta .btn-lime:hover {
+    background: #a8f5b8;
+    color: var(--dark);
+}
+ 
+ 
+/* ── RESPONSIVE ── */
+ 
+@media (max-width: 768px) {
+    .arch-search {
+        max-width: 100%;
+    }
+ 
+    .arch-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

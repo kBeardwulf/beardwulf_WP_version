@@ -1,0 +1,150 @@
+/* ── PLAN DU SITE ── */
+
+#plansite {
+    background: var(--forest);
+}
+
+.plansite-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.ps-group {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: border-color 0.25s;
+}
+
+.ps-group:hover {
+    border-color: rgba(144,240,160,0.35);
+}
+
+.ps-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.ps-ic {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(144,240,160,0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lime);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.ps-group-header h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--white);
+}
+
+.ps-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.ps-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s, padding-left 0.2s;
+}
+
+.ps-links li a:hover {
+    color: var(--lime);
+    background: rgba(144,240,160,0.05);
+    padding-left: 1rem;
+}
+
+.ps-arrow {
+    color: rgba(144,240,160,0.35);
+    font-size: 0.75rem;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.ps-links li a:hover .ps-arrow {
+    color: var(--lime);
+}
+
+/* Entrée parent non-cliquable (ex: "Toutes les compétences") */
+.ps-parent .ps-label {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(144,240,160,0.4);
+    padding: 0.5rem 0.6rem;
+    cursor: default;
+}
+
+.ps-arrow-muted {
+    color: rgba(144,240,160,0.25);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* Liens enfants (sous-pages) */
+.ps-child a {
+    padding-left: 1.6rem !important;
+    font-size: 0.92rem !important;
+    color: rgba(242,247,244,0.4) !important;
+}
+
+.ps-child a:hover {
+    padding-left: 2rem !important;
+    color: var(--lime) !important;
+}
+
+/* CTA bas de page */
+.ps-cta {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ── RESPONSIVE PLAN DU SITE ── */
+
+@media (max-width: 1024px) {
+    .plansite-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .plansite-grid {
+        grid-template-columns: 1fr;
+    }
+}

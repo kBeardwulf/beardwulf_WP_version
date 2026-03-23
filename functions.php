@@ -11,14 +11,37 @@ function beardwulf_styles()
 }
 add_action('wp_enqueue_scripts', 'beardwulf_styles');
 
-function beardwulf_contact_style() 
+function beardwulf_specific_style() 
 {
-  if(is_page(19)) 
-    {
-        wp_enqueue_style('style-contact', get_template_directory_uri() . '/assets/css/contactstyle.css', array(), null); 
+    if (is_page(19)) {
+        wp_enqueue_style('style-contact', get_template_directory_uri() . '/assets/css/contactstyle.css', array(), null);
+    }
+    if (is_singular('realisation')) {
+        wp_enqueue_style('style-single-real', get_template_directory_uri() . '/assets/css/single-realisation.css', array(), null);
+    }
+    if( is_page(14) ) {
+    wp_enqueue_style('style-blog-projet', get_template_directory_uri() . '/assets/css/blogprojet.css', array(), null);
+    }
+    if( is_page(26) ) {
+    wp_enqueue_style('style-services', get_template_directory_uri() . '/assets/css/services.css', array(), null);
+    }
+    if( (is_page(303) || is_page(309) || is_page(313)) ) {
+    wp_enqueue_style('style-service-detail', get_template_directory_uri() . '/assets/css/service-detail.css', array(), null);
+    }
+    if( is_page(320) ) {
+    wp_enqueue_style('style-mentions', get_template_directory_uri() . '/assets/css/mentions.css', array(), null);
+    }
+    if( is_page(324) ) {
+    wp_enqueue_style('style-aboutme', get_template_directory_uri() . '/assets/css/aboutme.css', array(), null);
+    }
+    if( is_page(180) ) {
+    wp_enqueue_style('style-plansite', get_template_directory_uri() . '/assets/css/plansite.css', array(), null);
+    }
+    if( is_page(588) ) {
+    wp_enqueue_style('style-politique', get_template_directory_uri() . '/assets/css/politique.css', array(), null);
     }
 }
-add_action('wp_enqueue_scripts', 'beardwulf_contact_style');
+add_action('wp_enqueue_scripts', 'beardwulf_specific_style');
 
 //Applique les scripts
 function beardwulf_script()

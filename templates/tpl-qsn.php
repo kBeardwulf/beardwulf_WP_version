@@ -1,164 +1,139 @@
 <?php
 /*
-  Template Name: Qsn
-  Description: page de qui nous sommes
+  Template Name: À Propos
+  Description: Page de présentation de Kevin Burdloff
 */
 get_header();
 ?>
-<!-- ========== BREADCRUMB ========== -->
-  <section class="breadcrumb-section">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="<?php echo home_url(); ?>">Accueil</a>
-        <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
-        <span class="breadcrumb-current"><?php the_title(); ?></span>
-      </nav>
-      <h1 class="page-title"><?php the_title(); ?></h1>
-    </div>
-  </section>
-
-  <!-- ========== ABOUT 50/50 ========== -->
-  <section class="about-page">
-    <div class="container split-grid">
-      <div class="split-text fade-in">
-        <span class="section-tag">Notre histoire</span>
-        <h2>Une passion pour la construction depuis 2004</h2>
-        <p>Fondée il y a plus de 20 ans, DWWM est née de la volonté de proposer des services de construction et de rénovation alliant excellence technique et relation humaine. Notre fondateur, fort d'une expérience de terrain, a su fédérer une équipe de professionnels partageant les mêmes valeurs : rigueur, transparence et respect du client.</p>
-        <p>Aujourd'hui, notre entreprise intervient sur tout type de projet, du particulier souhaitant rénover son appartement au promoteur immobilier planifiant un programme neuf. Nous sommes fiers d'avoir contribué à la transformation de centaines de projets en réalisations concrètes.</p>
-        <p>Notre force réside dans notre capacité à allier tradition du métier et techniques modernes. Chaque chantier est géré avec la même exigence de qualité, quelle que soit son envergure.</p>
+ 
+<!-- PAGE HERO -->
+<section class="page-hero about-hero">
+  <div class="si">
+    <span class="eyebrow reveal"><?php the_field('titre_sourcil'); ?></span>
+    <h1 class="stitle reveal"><?php the_field('titre_ligne_1'); ?><br><span class="t-lime"><?php the_field('titre_ligne_2'); ?></span></h1>
+    <p class="sdesc reveal"><?php the_field('desc_hero'); ?></p>
+  </div>
+</section>
+ 
+<!-- INTRO -->
+<section class="about-intro-section">
+  <div class="si">
+    <div class="about-intro-g">
+ 
+      <!-- PHOTO 1 -->
+      <div class="about-photo reveal">
+        <?php
+          $photo_1 = get_field('photo_apropos_1');
+          if($photo_1): echo wp_get_attachment_image($photo_1['ID'], 'full');
+          else: ?>
+            <div class="about-photo-placeholder"><i class="fa-solid fa-user"></i></div>
+          <?php endif; ?>
       </div>
-      <div class="split-image fade-in">
-        <img src="images/qsn-1.jpg" alt="L'équipe DWWM sur un chantier">
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== POURQUOI NOUS CHOISIR ========== -->
-  <section class="why-us">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Nos atouts</span>
-        <h2>Pourquoi nous choisir</h2>
-        <p>Des engagements concrets qui font la différence sur chacun de nos chantiers.</p>
-      </div>
-      <div class="why-us-grid">
-        <div class="why-us-box fade-in">
-          <div class="why-us-icon"><i class="fas fa-certificate"></i></div>
-          <h3>Expertise certifiée</h3>
-          <p>Nos équipes sont certifiées et formées en continu aux dernières normes et techniques de construction.</p>
-        </div>
-        <div class="why-us-box fade-in">
-          <div class="why-us-icon"><i class="fas fa-clock"></i></div>
-          <h3>Respect des délais</h3>
-          <p>Nous nous engageons contractuellement sur les délais de livraison et mettons tout en œuvre pour les respecter.</p>
-        </div>
-        <div class="why-us-box fade-in">
-          <div class="why-us-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>Devis transparent</h3>
-          <p>Nos devis sont détaillés et sans surprise. Vous savez exactement ce que vous payez, sans coûts cachés.</p>
-        </div>
-        <div class="why-us-box fade-in">
-          <div class="why-us-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>Garantie décennale</h3>
-          <p>Tous nos travaux sont couverts par une garantie décennale, pour votre tranquillité d'esprit sur le long terme.</p>
-        </div>
-        <div class="why-us-box fade-in">
-          <div class="why-us-icon"><i class="fas fa-handshake"></i></div>
-          <h3>Accompagnement personnalisé</h3>
-          <p>Un interlocuteur unique vous accompagne de la conception à la réception, pour un suivi sans faille.</p>
-        </div>
-        <div class="why-us-box fade-in">
-          <div class="why-us-icon"><i class="fas fa-gem"></i></div>
-          <h3>Matériaux de qualité</h3>
-          <p>Nous sélectionnons rigoureusement nos fournisseurs pour vous garantir des matériaux durables et performants.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CHIFFRES CLÉS ========== -->
-  <section class="key-figures">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">En quelques chiffres</span>
-        <h2>Nos chiffres clés</h2>
-      </div>
-      <div class="figures-grid">
-        <div class="figure-box fade-in">
-          <div class="figure-icon"><i class="fas fa-hard-hat"></i></div>
-          <div class="figure-number" data-count="500" data-suffix="+">0</div>
-          <span class="figure-label">Chantiers réalisés</span>
-        </div>
-        <div class="figure-box fade-in">
-          <div class="figure-icon"><i class="fas fa-calendar-check"></i></div>
-          <div class="figure-number" data-count="20" data-suffix="+">0</div>
-          <span class="figure-label">Années d'expérience</span>
-        </div>
-        <div class="figure-box fade-in">
-          <div class="figure-icon"><i class="fas fa-users"></i></div>
-          <div class="figure-number" data-count="45" data-suffix="">0</div>
-          <span class="figure-label">Collaborateurs</span>
-        </div>
-        <div class="figure-box fade-in">
-          <div class="figure-icon"><i class="fas fa-smile"></i></div>
-          <div class="figure-number" data-count="98" data-suffix="%">0</div>
-          <span class="figure-label">Clients satisfaits</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Avis clients</span>
-        <h2>Ce que disent nos clients</h2>
-        <p>La satisfaction de nos clients est notre plus belle récompense.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"DWWM a réalisé la construction de notre maison dans les délais et le budget prévus. Le suivi de chantier était irréprochable. Nous recommandons vivement cette entreprise."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">ML</div>
-            <div>
-              <strong>Marie Lefèvre</strong>
-              <span>Construction maison individuelle</span>
+ 
+      <div>
+        <span class="eyebrow reveal"><?php the_field('titre_sourcil_intro'); ?></span>
+        <h2 class="stitle reveal"><?php the_field('titre_intro_1'); ?><br><span class="t-lime"><?php the_field('titre_intro_2'); ?></span></h2>
+        <?php the_field('desc_intro'); ?>
+ 
+        <div class="values reveal">
+          <?php if( have_rows('repet_intro') ): while( have_rows('repet_intro') ): the_row(); ?>
+            <div class="value">
+              <div class="value-ic"><?php the_sub_field('icone_intro'); ?></div>
+              <span><?php the_sub_field('label_intro'); ?></span>
             </div>
-          </div>
+          <?php endwhile; endif; ?>
         </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Une équipe professionnelle et à l'écoute. La rénovation de nos bureaux a été menée avec expertise. Le résultat dépasse nos attentes. Merci à toute l'équipe !"</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">PD</div>
-            <div>
-              <strong>Pierre Durand</strong>
-              <span>Rénovation bureaux professionnels</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-          <p class="testimonial-text">"Excellent travail sur notre extension. L'équipe a su proposer des solutions techniques adaptées et le chantier a été propre et bien organisé du début à la fin."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SB</div>
-            <div>
-              <strong>Sophie Bernard</strong>
-              <span>Extension &amp; surélévation</span>
-            </div>
-          </div>
-        </div>
+ 
+        <a href="<?php echo get_permalink(19); ?>" class="btn-lime reveal">
+          Travaillons ensemble <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
+ 
     </div>
-  </section>
-  <?php
-get_footer();
-?>
+  </div>
+</section>
+ 
+<!-- MON HISTOIRE -->
+<section class="about-story-section">
+  <div class="si">
+    <span class="eyebrow reveal"><?php the_field('titre_sourcil_story'); ?></span>
+    <h2 class="stitle reveal"><?php the_field('titre_story_1'); ?><br><span class="t-lime"><?php the_field('titre_story_2'); ?></span></h2>
+ 
+    <div class="about-timeline">
+ 
+      <?php if( have_rows('repet_story') ): while( have_rows('repet_story') ): the_row(); ?>
+        <div class="about-tl-item reveal">
+          <div class="about-tl-ic">
+            <?php the_sub_field('icone_story'); ?>
+          </div>
+          <div class="about-tl-body">
+            <span class="about-tl-tag"><?php the_sub_field('titre_sourcil_repetstory'); ?></span>
+            <h3><?php the_sub_field('titre_repetstory'); ?></h3>
+            <p><?php the_sub_field('desc_repetstory'); ?></p>
+          </div>
+        </div>
+      <?php endwhile; endif; ?>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- PHOTO + CITATION -->
+<section class="about-quote-section">
+  <div class="si">
+    <div class="about-quote-g">
+ 
+      <!-- PHOTO 2 -->
+      <div class="about-photo about-photo--square reveal">
+        <?php
+          $photo_2 = get_field('photo_apropos_2');
+          if($photo_2): echo wp_get_attachment_image($photo_2['ID'], 'full');
+          else: ?>
+            <div class="about-photo-placeholder"><i class="fa-solid fa-user"></i></div>
+          <?php endif; ?>
+      </div>
+ 
+      <div class="about-quote-content reveal d1">
+        <i class="fa-solid fa-quote-left about-quote-ic"></i>
+        <blockquote class="about-quote">
+          <?php the_field('titre_citation'); ?>
+        </blockquote>
+        <?php the_field('wysiwyg_citation'); ?>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- CE QUI ME DRIVE -->
+<section class="about-drive-section">
+  <div class="si">
+    <span class="eyebrow reveal"><?php the_field('titre_sourcil_motiv'); ?></span>
+    <h2 class="stitle reveal"><?php the_field('titre_motiv_1'); ?><br><span class="t-lime"><?php the_field('titre_motiv_2'); ?></span></h2>
+ 
+    <div class="about-drive-grid">
+      <?php if( have_rows('repet_motiv') ): while( have_rows('repet_motiv') ): the_row(); ?>
+        <div class="about-drive-card reveal">
+          <div class="about-drive-ic"><?php the_sub_field('icone_motiv'); ?></div>
+          <h3><?php the_sub_field('titre_motiv'); ?></h3>
+          <p><?php the_sub_field('desc_motiv'); ?></p>
+        </div>
+      <?php endwhile; endif; ?>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA -->
+<section class="about-cta-section">
+  <div class="si about-cta-inner">
+    <div>
+      <h2 class="stitle reveal"><?php the_field('titre_contact_1'); ?><br><span class="t-lime"><?php the_field('titre_contact_2'); ?></span></h2>
+      <p class="sdesc reveal"><?php the_field('desc_contact'); ?></p>
+    </div>
+    <a href="<?php echo get_permalink(19); ?>" class="btn-lime reveal">
+      <?php the_field('btn_contact'); ?> <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+ 
+<?php get_footer(); ?>

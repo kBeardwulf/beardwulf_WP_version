@@ -21,5 +21,12 @@
         'menu_class'      => 'nav-list',
       ));
     ?>
+
+    <!-- Burger -->
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
